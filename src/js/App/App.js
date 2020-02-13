@@ -1,10 +1,18 @@
 import React from 'react';
-import ReactDOM from "react-dom";
-
+import Posts from "../components/Posts";
+import PostForm from "../components/PostForm";
+import {Provider} from 'react-redux';
+import {createStore, applyMiddleware} from "redux";
+import store from "../store";
 
 function App () {
     return (
-        <div>React</div>
+        <Provider store={store}>
+            <div>
+                <PostForm/>
+                <Posts/>
+            </div>
+        </Provider>
     )
 }
 
